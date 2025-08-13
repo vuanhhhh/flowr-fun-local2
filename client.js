@@ -1,7 +1,14 @@
 console.log("Build ver 10.1 (this is not going to be updated every update probably)")
 
 // Force WebSocket to connect to real backend instead of current origin
-let HOST = 'wss://flowr.fun';
+let HOST;
+if (location.origin.includes('github.io')) {
+    HOST = 'wss://flowr.fun';
+} else if (location.origin === 'https://flowrclient.serum0017.repl.co') {
+    HOST = 'wss://flowr.fun';
+} else {
+    HOST = location.origin.replace(/^http/, 'ws');
+}
 let ws = new WebSocket(HOST);
 ws.binaryType = "arraybuffer";
 
