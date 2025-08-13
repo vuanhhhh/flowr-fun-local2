@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>flowr editor</title>
+    <link rel="icon" type="image/png" href="gfx/favicon.ico" sizes="32x32">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+    <meta name="application-name" content="flowr.fun editor">
+    <meta name="description" content="Welcome to flowr, a florr.io clone! Create custom enemies, petals, and biomes in this editor!">
+    <meta name="msapplication-TileColor" content="#181818">
+    <meta name="theme-color" content="#181818">
+    <link href="editor/style.css" rel="stylesheet" type="text/css" type='text/css'/>
+  </head>
+  <body>
+    <div class="loader">Loading...</div>
+    <canvas id="canvas" width="1280" height="720" style="z-index: -1"></canvas>
+
+    <div class="all-gui">
+        <div class="leftgui" id="leftgui">
+            <div class="submenu" id="modemenu">
+                <!--<span class="submenu-title" style="z-index: 10000">Change Mode</span>-->
+
+                <div class="menu-button-div" id="petal-button">
+                    <button class="menu-button"><img id="petal-button-image" width="30" height="30" draggable="false"></img></button>
+                    <span class="menu-button-text">Petal</span>
+                </div>
+                <div class="menu-button-div" id="enemy-button">
+                    <button class="menu-button"><img id="enemy-button-image" width="30" height="30" draggable="false"></img></button>
+                    <span class="menu-button-text">Enemy</span>
+                </div>
+                <div class="menu-button-div" id="biome-button">
+                    <button class="menu-button"><img id="biome-button-image" width="30" height="30" draggable="false"></img></button>
+                    <span class="menu-button-text">Biome</span>
+                </div>
+            </div>
+            <div id="selected-box" style="z-index: -1"></div>
+        </div>
+
+        <div class="centergui" id="centergui">
+            <div class="submenu" id="toolmenu">
+                <!--<div class="menu-button-div" id="test-button">
+                    <button class="menu-button"><img id="test" width="30" height="30" draggable="false"></img></button>
+                    <span class="menu-button-text">Test</span>
+                </div>
+                <div class="menu-button-div" id="test-button">
+                    <button class="menu-button"><img id="test" width="30" height="30" draggable="false"></img></button>
+                    <span class="menu-button-text">Test</span>
+                </div>
+                <div class="menu-button-div" id="test-button">
+                    <button class="menu-button"><img id="test" width="30" height="30" draggable="false"></img></button>
+                    <span class="menu-button-text">Test</span>
+                </div>-->
+            </div>
+        </div>
+
+        <div class="gui">
+            <div class="data-gui hidden"></div>
+            <button class="toggle-gui" data-usage="off">Open Menu</button>
+        </div>
+    </div>
+
+    <script src="client/petal.js"></script>
+    <script src="client/enemy.js"></script>
+    <script src="client/flower.js"></script>
+    <script src="editor/flowrCode.js"></script>
+    <script src="client/petalContainer.js"></script>
+    <script src="editor/ref.js"></script>
+    <script src="editor/modeManagers/SettingsManager.js"></script>
+    <script src="systems/room.js"></script>
+    <script src="editor/calculateWaveSpawns.js"></script>
+    <script src="editor/util.js"></script>
+    <script src="editor/render.js"></script>
+    <script src="client/sharedWithEditor.js"></script>
+    <script src="editor/enemySimulations.js"></script>
+    <script src="editor/processInputChange.js"></script>
+    <script src="editor/modeManagers/biomeModeManager.js"></script>
+    <script src="editor/modeManagers/petalModeManager.js"></script>
+    <script src="editor/modeManagers/enemyModeManager.js"></script>
+    <script src="editor/importAndExport.js"></script>
+    <script src="editor/objectToFolder.js"></script>
+    <script src="editor/generateIcons.js"></script>
+    <script src="editor/modeManagers/toolManager.js"></script>
+    <script src="editor/main.js"></script>
+  </body>
+</html>
